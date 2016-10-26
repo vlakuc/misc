@@ -23,3 +23,17 @@
 #~/ffmpeg/ffmpeg -y -i 00091-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p8.mp4
 ~/ffmpeg/ffmpeg -y -i 00092-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p9.mp4
 ~/ffmpeg/ffmpeg -y -i 00093-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p10.mp4
+#!/bin/bash
+
+FFMPEG=/home/vkuchuk/proj/ffmpeg/ffmpeg
+
+#        -ss 16 \
+#$FFMPEG -y -i p1_logo.mp4 \
+#	 -vf fade=in:0:25 -af afade=t=in:st=0:d=1.04 \
+#	 -c:v libx264 \
+#	 -vb 5M p1_logo_fade_in.mp4
+
+$FFMPEG -i p2_logo.mp4 \
+	 -vf fade=out:7415:25 -af afade=t=out:st=296:d=1.60 \
+	 -c:v libx264 \
+	 -vb 5M p2_logo_fade_out.mp4
