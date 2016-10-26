@@ -1,1 +1,25 @@
 ~/ffmpeg/ffmpeg -i intro_25fps_1920.mp4 -vf scale=1920:1080 -vb 5M intro_25fps_1920_180.mp4
+~/ffmpeg/ffmpeg -i intro_25fps_1920_180.mp4 -c:a aac -ar 48000 -c:v libx264 -vb 5M intro_25fps_1920_180_x264.mp4 
+#!/bin/bash
+
+~/ffmpeg/ffmpeg -y -t 15 -f concat -i mylist.txt -c:a aac -c:v libx264 intro_p1.mp4~/ffmpeg/ffmpeg -i intro_25fps_1920_180_x264.mp4  -f null /dev/null 
+~/ffmpeg/ffmpeg -i img/fin.png -vf scale=1920:1080 -t 10 fin.mp4
+#!/bin/bash
+
+#~/ffmpeg/ffmpeg -i intro_25fps_1920_180_x264.mp4 \
+# -vf fade=out:125:25 -af afade=t=out:st=5:d=1.04 \
+#-c:v libx264 -q:v 2 intro_fade.mp4
+
+~/ffmpeg/ffmpeg -y -i p1.mp4 \
+ -vf fade=in:0:25 -af afade=t=in:st=0:d=1.04 \
+-c:v libx264 -q:v 2 p1_fade.mp4#!/bin/bash
+#~/ffmpeg/ffmpeg -y -i 00084-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5 -ss 12 -codec:a copy -c:v libx264 -vb 5M p1.mp4
+#~/ffmpeg/ffmpeg -y -i 00085-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p2.mp4
+#~/ffmpeg/ffmpeg -y -i 00086-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p3.mp4
+#~/ffmpeg/ffmpeg -y -i 00087-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p4.mp4
+#~/ffmpeg/ffmpeg -y -i 00088-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p5.mp4
+#~/ffmpeg/ffmpeg -y -i 00089-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p6.mp4
+#~/ffmpeg/ffmpeg -y -i 00090-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p7.mp4
+#~/ffmpeg/ffmpeg -y -i 00091-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p8.mp4
+~/ffmpeg/ffmpeg -y -i 00092-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p9.mp4
+~/ffmpeg/ffmpeg -y -i 00093-1.m4v -i ./r1/output_320.jpg -filter_complex overlay=main_w-overlay_w-5:5  -codec:a copy -c:v libx264 -vb 5M p10.mp4
