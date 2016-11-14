@@ -37,3 +37,5 @@ $FFMPEG -i p2_logo.mp4 \
 	 -vf fade=out:7415:25 -af afade=t=out:st=296:d=1.60 \
 	 -c:v libx264 \
 	 -vb 5M p2_logo_fade_out.mp4
+~/ffmpeg/ffmpeg -loop 1 -i ./fin.jpg -c:v libx264 -t 10 -pix_fmt yuv420p -vf scale=1920:1080 -r 25 -vb 5M fin.mp4
+ffmpeg -ss 1315.33 -i tmp.mp4 -f image2 -vframes 10 yosemite%d.png
